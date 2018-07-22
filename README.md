@@ -9,4 +9,4 @@ Configuration files of my MK2 I3 Prusa clone with a smoothieboard and BL Touch
 
 ## Resources
 
-BL Touch guideline for smoothieware [here] (http://smoothieware.org/zprobe)
+BL Touch guideline for smoothieware [here](http://smoothieware.org/zprobe)
