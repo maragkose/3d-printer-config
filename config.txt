@@ -61,7 +61,7 @@ extruder.hotend.acceleration                    500           # Acceleration for
 extruder.hotend.max_speed                       50            # Maximum speed in mm/s
 
 extruder.hotend.step_pin                        2.3           # Pin for extruder step signal
-extruder.hotend.dir_pin                         0.22          # Pin for extruder dir signal ( add '!' to reverse direction )
+extruder.hotend.dir_pin                         0.22!         # Pin for extruder dir signal ( add '!' to reverse direction )
 extruder.hotend.en_pin                          0.21          # Pin for extruder enable signal
 
 # Extruder offset
@@ -215,7 +215,7 @@ beta_max                                     200              # This gets loaded
 #gamma_min_endstop                           1.28^            # Pin to read min endstop, add a ! to invert if endstop is NO connected to ground
 gamma_max_endstop                            nc            # Pin to read max endstop, uncomment this and comment the above if using max endstops
 gamma_homing_direction                       home_to_min      # Or set to home_to_max and set alpha_max and uncomment the alpha_max_endstop
-gamma_min                                    0                # This gets loaded as the current position after homing when home_to_min is set
+gamma_min                                    -0.5
 gamma_max                                    200              # This gets loaded as the current position after homing when home_to_max is set
 
 alpha_max_travel                             500              # Max travel in mm for alpha/X axis when homing
@@ -321,8 +321,8 @@ panel.enable                                 true          # Set to true to enab
 panel.lcd                                   reprap_discount_glcd     #
 panel.spi_channel                           0                 # spi channel to use  ; GLCD EXP1 Pins 3,5 (MOSI, SCLK)
 panel.spi_cs_pin                            0.16              # spi chip select     ; GLCD EXP1 Pin 4
-panel.encoder_a_pin                         3.25!^            # encoder pin         ; GLCD EXP2 Pin 3
-panel.encoder_b_pin                         3.26!^            # encoder pin         ; GLCD EXP2 Pin 5
+panel.encoder_a_pin                         3.26!^            # encoder pin         ; GLCD EXP2 Pin 3
+panel.encoder_b_pin                         3.25!^            # encoder pin         ; GLCD EXP2 Pin 5
 panel.click_button_pin                      1.30!^            # click button        ; GLCD EXP1 Pin 2
 panel.buzz_pin                              1.31              # pin for buzzer      ; GLCD EXP1 Pin 1
 panel.back_button_pin                       2.11!^            # back button         ; GLCD EXP2 Pin 8
@@ -330,8 +330,8 @@ panel.external_sd                     true              # set to true if there i
 panel.external_sd.spi_channel         1                 # set spi channel the sdcard is on
 panel.external_sd.spi_cs_pin          0.28              # set spi chip select for the sdcard (or any spare pin)
 panel.external_sd.sdcd_pin            0.27!^            # sd detect signal (set to nc if no sdcard detect) (or any spare pin)
-
-panel.menu_offset                            0                 # Some panels will need 1 here
+panel.encoder.resolution 2
+panel.menu_offset                            1                 # Some panels will need 1 here
 
 panel.alpha_jog_feedrate                     6000              # X jogging feedrate in mm/min
 panel.beta_jog_feedrate                      6000              # Y jogging feedrate in mm/min
